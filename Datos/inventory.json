@@ -1,0 +1,37 @@
+{
+    "P001": {
+        "title": "Don Quijote de la Manchatitulo",
+        "author": "Miguel de Cervantes Saavedra",
+        "category": "Novela",
+        "price": 89560,
+        "stock": 10
+    },
+    "P002": {
+        "title": "Cien años de soledad",
+        "author": "Gabriel Garcia Marquez",
+        "category": "Realismo mágico",
+        "price": 6000,
+        "stock": 84
+    },
+    "P003": {
+        "title": "El principito",
+        "author": "Antoine de Saint-Exupéry",
+        "category": "Literatura infantil",
+        "price": 894500,
+        "stock": 78
+    },
+    "P004": {
+        "title": "La Odisea",
+        "author": "Homero",
+        "category": "Epico",
+        "price": 894500,
+        "stock": 89
+    },
+    "P005": {
+        "title": "Harry Potter",
+        "author": "J. K. Rowling",
+        "category": "Literatura fantástica",
+        "price": 894500,
+        "stock": 9
+    }
+}

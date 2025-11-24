@@ -1,0 +1,31 @@
+Encargado del área digital de una libreria nacional, sistema robusto, registrar ventas y productos, 
+generar reportes detallados, despuestos por clientes, agrupar estadísticas por autor y evaluar el rendimiento
+del inventario con base en ventas.
+
+Requitos Funcionales:
+
+Gestión del inventario
+1. Registrar, Consultar, Actualizar y Eliminar productos
+2. Cada producto debe tener: Titulo, autor, categoria, precio, cantidad en stock
+
+Registro y consulta de ventas
+1. Permitir regustar ventas de productos asociando: cliente, producto vendido, cantidad, fecha y descuento.
+2. Validar stock disponible y actualizarlo automaticamente
+
+Modulo de reportes
+1. Mostrar el top 3 de porductos mas vendidos
+2. Generar reporte de ventas totales agrupadados por autor
+    X 3. Calcular ingreso neto y bruto
+
+Validaciones avanzadas
+1. Validar entradas (números positivos, campos oblogatorios, formatos correctos)
+2. NO permitir ventas con stock insuficiente
+
+Diseño modular
+Funciones
+Parametros y retorno
+Lambda para cálculos agregados
+Diccionarios
+Listas
+5 productos pre-cargados
+

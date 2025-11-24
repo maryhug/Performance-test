@@ -1,0 +1,14 @@
+[
+    {
+        "customer": "mar",
+        "customer_type": "wholesaler",
+        "code_product": "P002",
+        "name_book": "Cien años de soledad",
+        "author": "Gabriel Garcia Marquez",
+        "quantity": 5,
+        "price_unitario": 6000,
+        "discount_percentage”": 15,
+        "total": 25500.0,
+        "date": "2025-11-24 13:04:41"
+    }
+]
