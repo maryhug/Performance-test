@@ -1,0 +1,115 @@
+COMENTARIO GENERAL DEL CÓDIGO
+Este archivo implementa el módulo de configuración central del sistema,
+siguiendo el patrón de variables globales compartidas para mantener el estado de la aplicación.
+Estructuras de datos utilizadas:
+
+Diccionario vacío (inventory = {}):
+
+Tipo: Dictionary (mutable)
+Propósito: Almacenar inventario completo
+Estructura esperada: Diccionario anidado de dos niveles
+Ejemplo:
+    {
+       "P001": {
+         "title": "Don Quijote",
+         "author": "Cervantes",
+         "category": "Novela",
+         "price": 89560,
+         "stock": 10
+       }
+    }
+
+Lista vacía (sales = []):
+
+Tipo: List (mutable)
+Propósito: Registro histórico de ventas
+Estructura esperada: Lista de diccionarios
+Ejemplo:
+    [
+       {
+         "customer": "Juan Pérez",
+         "customer_type": "vip",
+         "total": 5000.0,
+         "date": "2024-11-25 14:30:00"
+       }
+    ]
+
+Diccionario de configuración (customer_discounts):
+
+Tipo: Dictionary (inmutable en práctica)
+Propósito: Tabla de descuentos por categoría
+Clave: String (tipo de cliente)
+Valor: Integer (porcentaje de descuento)
+
+
+Strings constantes (rutas de archivos):
+
+ARCHIVE_INVENTORY: String literal con ruta
+SALES_ARCHIVE: String literal con ruta
+Convención: MAYÚSCULAS indica que son constantes (no deben modificarse)
+
+
+Strings constantes (decoradores visuales):
+
+decorator: String generado por repetición ("=" * 70)
+small: String generado por repetición ("=" * 50)
+
+
+
+Tipos de datos:
+
+Dictionary: 2 diccionarios (uno vacío, uno con datos)
+List: 1 lista vacía
+String: 4 strings (2 rutas, 2 decoradores)
+Integer: valores en el diccionario de descuentos
+
+Patrones de diseño aplicados:
+
+Singleton de estado global:
+
+Todas las variables son globales y compartidas
+Todos los módulos importan Details para acceder al estado
+
+
+Configuración centralizada:
+
+Todas las constantes en un solo lugar
+Facilita mantenimiento y modificaciones
+
+
+Separación de configuración y lógica:
+
+Este archivo NO contiene funciones
+Solo datos y configuración
+
+
+
+Ventajas de esta estructura:
+✅ Centralización: Un solo punto de verdad para configuración
+✅ Facilidad de mantenimiento: Cambiar descuentos o rutas en un solo lugar
+✅ Compartición de estado: Todos los módulos acceden a los mismos datos
+✅ Claridad: Nombres descriptivos y constantes en MAYÚSCULAS
+✅ Extensibilidad: Fácil agregar nuevos tipos de cliente o constantes
+Consideraciones:
+⚠️ Variables globales mutables: inventory y sales pueden modificarse desde cualquier módulo
+⚠️ No hay persistencia automática: Los datos en memoria se pierden si no se guardan explícitamente
+⚠️ Sin validación de tipos: Python no fuerza la estructura esperada de los diccionarios
+Uso en el sistema:
+python# Otros módulos importan Details para acceder a estas variables:
+import Details
+
+# Acceder al inventario
+Details.inventory["P001"] = {...}
+
+# Agregar venta
+Details.sales.append(nueva_venta)
+
+# Obtener descuento
+descuento = Details.customer_discounts["vip"]  # → 10
+
+# Usar decorador
+print(Details.decorator)  # → "====================================..."
+
+Tipo de archivo: Módulo de configuración y estado global (configuration module / global state manager)
+No se utilizan: tuplas, sets, clases, funciones, lógica de negocio. Este archivo es puramente declarativo,
+define el estado inicial y configuración del sistema completo.

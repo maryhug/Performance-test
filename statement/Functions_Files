@@ -1,0 +1,50 @@
+COMENTARIO GENERAL DEL CÓDIGO
+Este código implementa la capa de persistencia de datos para el sistema de
+inventario de librería, manejando la lectura y escritura de archivos JSON.
+Estructuras de datos utilizadas:
+
+Diccionario (Details.inventory):
+
+Estructura principal para almacenar el inventario completo
+Claves: códigos de productos (strings como "P001", "P002")
+Valores: diccionarios anidados con información de cada libro
+
+
+Diccionarios anidados: Cada libro contiene:
+
+'title': string
+'author': string
+'category': string
+'price': int (precio en pesos)
+'stock': int (cantidad disponible)
+
+
+Lista (Details.sales):
+
+Almacena el historial de ventas
+Cada elemento sería un registro de venta (probablemente diccionarios)
+
+
+Strings: Para rutas de archivos, mensajes y claves de diccionarios
+
+Tipos de datos:
+
+String (str): textos, rutas de archivos, códigos, nombres
+Integer (int): precios y cantidades de stock
+Boolean: valores de retorno en funciones save (True/False)
+None: implícito cuando no se retorna nada
+
+Operaciones con archivos:
+
+Lectura: json.load() - convierte JSON a estructuras Python
+Escritura: json.dump() - convierte estructuras Python a JSON
+Gestión de directorios: os.makedirs(), os.path.exists()
+
+Manejo de excepciones:
+
+json.JSONDecodeError: para archivos JSON corruptos
+Exception: para errores generales de I/O
+
+No se utilizan: tuplas, sets, clases personalizadas, listas complejas (más allá de Details.sales),
+ni estructuras de datos avanzadas. El código se centra en persistencia simple usando JSON como formato
+de almacenamiento intermedio entre Python y archivos de texto.

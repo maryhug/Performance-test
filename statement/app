@@ -1,0 +1,98 @@
+COMENTARIO GENERAL DEL CÓDIGO
+Este es el archivo principal (main) del sistema de gestión de librería,
+que actúa como controlador central del programa, coordinando todas las funcionalidades
+a través de un menú interactivo basado en consola.
+Estructuras de datos utilizadas:
+
+String (option):
+
+Almacena la selección del usuario del menú
+Se compara con valores literales ("1", "2", etc.)
+
+
+Funciones importadas:
+
+No hay estructuras de datos complejas en este archivo
+Todas las estructuras (diccionarios, listas) se manejan en los módulos importados
+
+
+
+Tipos de datos:
+
+String (str): entrada del usuario, mensajes
+None: retorno implícito de funciones de menú
+Exception objects: objetos de error capturados
+
+Patrón de diseño:
+Este código implementa varios patrones importantes:
+
+Menú basado en consola (CLI - Command Line Interface):
+
+Ciclo infinito con opciones numeradas
+Entrada del usuario determina flujo del programa
+
+
+Arquitectura modular:
+
+Separación de responsabilidades en módulos diferentes
+Functions_Files: persistencia de datos
+Functions_Inventory: gestión de productos
+Functions_Sale: gestión de ventas
+Functions_Report: análisis y reportes
+
+
+Control de flujo:
+
+Bucle infinito (while True): mantiene programa activo
+Estructura if-elif-else: enrutamiento de opciones
+Break statement: termina el bucle para salir
+
+
+Manejo de errores robusto:
+
+Try-except en inicialización (carga de datos)
+Try-except en bucle principal (errores de ejecución)
+Captura específica de KeyboardInterrupt
+Captura genérica de Exception
+
+
+
+Características del programa:
+Funcionalidades principales (9 opciones + salida):
+
+CRUD de inventario: crear, leer, actualizar, eliminar libros
+Gestión de ventas: registro y consulta de transacciones
+Reportes analíticos: estadísticas y métricas de negocio
+
+Robustez:
+
+✅ Manejo de errores en inicialización
+✅ Recuperación ante datos corruptos
+✅ Continúa funcionando después de errores
+✅ Salida controlada (Ctrl+C o opción 0)
+✅ Validación de opciones inválidas
+
+Principio de diseño aplicado:
+
+Separación de concerns: UI (main.py) separada de lógica de negocio (Functions)
+Punto de entrada único: if __name__ == "__main__"
+Flujo controlado: usuario tiene control total sobre qué hacer
+
+Flujo de ejecución:
+
+Inicio: Carga datos desde archivos
+Loop infinito:
+
+Muestra menú
+Espera entrada
+Ejecuta función correspondiente
+Repite
+
+
+Salida: Usuario selecciona 0 o presiona Ctrl+C
+
+No se utilizan: listas, diccionarios, tuplas, sets, comprensiones, clases personalizadas,
+ni estructuras de datos complejas. Este archivo es puramente de coordinación y control de flujo,
+delegando toda la lógica de negocio y manipulación de datos a los módulos especializados.
+Tipo de programa: Sistema CRUD (Create, Read, Update, Delete) con reportes,
+implementado como aplicación de consola interactiva para gestión empresarial de inventario y ventas de una librería.

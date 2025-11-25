@@ -1,0 +1,62 @@
+COMENTARIO GENERAL DEL CÓDIGO
+Este código implementa un sistema de reportes y análisis de ventas e inventario para
+la librería, generando tres tipos principales de informes estadísticos.
+Estructuras de datos utilizadas:
+
+Lista de ventas (data.sales):
+
+Lista que contiene diccionarios, donde cada diccionario representa una venta
+Cada venta contiene: 'name_book', 'author', 'code_product', 'quantity', 'total'
+
+
+Diccionario de inventario (data.inventory):
+
+Diccionario con código de producto como clave
+Valores: diccionarios anidados con 'title', 'price', 'stock'
+
+
+Diccionarios temporales creados en cada función:
+
+product_sales: acumula cantidades vendidas por producto (clave: nombre, valor: cantidad)
+sales_author: acumula ventas totales por autor (clave: autor, valor: monto)
+sold_by_book: acumula unidades vendidas por código (clave: código, valor: cantidad)
+
+
+Listas de tuplas: Generadas por .items() y sorted():
+
+sorted_products: lista de tuplas (nombre_producto, cantidad) ordenada descendentemente
+Usada para obtener el top 3 de productos
+
+
+Tuplas: Generadas implícitamente por:
+
+.items() que retorna pares (clave, valor)
+enumerate() que retorna (índice, valor)
+
+
+
+Tipos de datos:
+
+String (str): nombres de productos, autores, códigos
+Integer (int): cantidades, contadores, índices
+Float: precios, totales, valores monetarios
+Boolean: validaciones implícitas en condiciones if
+
+Funciones y métodos importantes:
+
+sorted(): ordena listas/diccionarios según criterio especificado
+lambda: función anónima para definir criterios de ordenamiento
+enumerate(): agrega índices automáticos a iteraciones
+.items(): convierte diccionario en lista de tuplas (clave, valor)
+.get(): acceso seguro a diccionarios con valor por defecto
+
+Operaciones de agregación:
+
+Acumulación de sumas (cantidades y montos)
+Agrupación por categorías (productos, autores)
+Ordenamiento y ranking (top 3, orden alfabético)
+Cálculos de métricas (ingresos, valor de inventario)
+
+No se utilizan: sets, clases personalizadas, comprensiones de listas avanzadas,
+ni estructuras de datos complejas. El código se enfoca en análisis de datos y generación de
+reportes usando estructuras básicas de Python de manera eficiente.

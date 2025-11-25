@@ -1,0 +1,33 @@
+COMENTARIO GENERAL DEL CÓDIGO
+Este código implementa un sistema de gestión de inventario para una librería
+con operaciones CRUD (Create, Read, Update, Delete).
+Estructuras de datos utilizadas:
+
+Diccionario principal (Details.inventory): Almacena todo el inventario donde:
+
+Clave: código del libro (string en mayúsculas, ej: "P006")
+Valor: otro diccionario anidado con los datos del libro
+
+
+Diccionarios anidados: Cada libro es representado por un diccionario con las siguientes claves:
+
+'title': string con el título
+'author': string con el autor
+'category': string con la categoría
+'price': float con el precio
+'stock': int con la cantidad en inventario
+
+
+Strings: Se utilizan extensivamente para textos, mensajes y códigos
+Listas: Se usa una lista implícita ['yes', 'y', 'yeah'] para validar confirmaciones
+Tuplas: El método .items() retorna una vista de tuplas (clave, valor) al iterar
+
+Tipos de datos:
+
+String (str): textos, códigos, nombres
+Float: precios con decimales
+Integer (int): cantidades de stock
+Boolean: validaciones implícitas (if conditions)
+
+No se utilizan: sets, listas complejas, tuplas explícitas como estructura principal,
+ni tipos de datos avanzados como clases personalizadas (aunque se importa un módulo Details que podría contenerlos).

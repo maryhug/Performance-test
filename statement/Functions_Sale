@@ -1,0 +1,77 @@
+COMENTARIO GENERAL DEL CÓDIGO
+Este código implementa el módulo de gestión de ventas del sistema de librería,
+manejando el proceso completo de registro de ventas y la visualización del historial.
+Estructuras de datos utilizadas:
+
+Diccionario de inventario (Details.inventory):
+
+Diccionario principal con código como clave
+Valores: diccionarios anidados con información de libros
+
+
+Diccionario filtrado (available_products):
+
+Creado mediante comprensión de diccionario
+Contiene solo productos con stock > 0
+
+
+Diccionario de mapeo (customer_type_map):
+
+Mapea opciones numéricas ("1", "2", "3") a tipos de cliente
+Permite validación y conversión de entrada
+
+
+Diccionario de descuentos (Details.customer_discounts):
+
+Almacena porcentajes de descuento por tipo de cliente
+Estructura: {tipo: porcentaje}
+
+
+Diccionario de venta (sale):
+
+Contiene 10 campos con información completa de la transacción
+Incluye datos del cliente, producto, cantidades, precios y timestamp
+
+
+Lista de ventas (Details.sales):
+
+Lista que almacena todos los diccionarios de ventas
+Cada elemento es un diccionario sale
+
+
+Strings: Nombres, códigos, fechas formateadas
+
+Tipos de datos:
+
+String (str): nombres, códigos, tipos de cliente, fechas
+Integer (int): cantidades, contadores (enumerate)
+Float: precios, subtotales, descuentos, totales
+Boolean: resultados de funciones save, validaciones
+datetime: objeto para manejar fecha/hora actual
+
+Técnicas de programación utilizadas:
+
+Comprensión de diccionario: {code: book for code, book in ... if book['stock'] > 0}
+Validación en cascada: múltiples verificaciones antes de procesar
+Manejo de excepciones: try-except para capturar errores específicos
+String formatting: .strftime() para formatear fechas
+Operaciones aritméticas: cálculo de subtotales, descuentos, totales
+Acumulación: suma de ingresos totales en el historial
+
+Operaciones matemáticas:
+
+Cálculo de subtotal: precio × cantidad
+Cálculo de descuento: subtotal × (porcentaje / 100)
+Cálculo de total: subtotal - descuento
+Reducción de stock: stock -= cantidad
+Acumulación de ingresos: total_income += venta['total']
+
+Módulos externos utilizados:
+
+datetime: para timestamp de ventas
+save_inventory() y save_sales(): persistencia de datos
+
+No se utilizan: sets, tuplas explícitas (solo las generadas por .items()),
+clases personalizadas, ni estructuras de datos complejas. El código implementa lógica de negocio transaccional
+con validaciones robustas, cálculos de precios con descuentos, y actualización coordinada de inventario y
+registro de ventas.
